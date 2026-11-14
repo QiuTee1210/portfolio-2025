@@ -1,10 +1,27 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import glsl from "vite-plugin-glsl";
+import { copyFileSync } from "node:fs";
+import { resolve } from "node:path";
+
+import type { Plugin } from "vite";
+
+// GitHub Pages has no SPA rewrites. Serving index.html as 404.html lets deep
+// links such as /project/parapizza load the app, which then reads the path.
+const spaFallback = (): Plugin => ({
+  name: "spa-fallback-404",
+  apply: "build",
+  closeBundle() {
+    copyFileSync(resolve(__dirname, "dist/index.html"), resolve(__dirname, "dist/404.html"));
+  },
+});
 
 export default defineConfig({
+  // e.g. "/portfolio-2025/" when deployed to a GitHub Pages project site
+  base: process.env.VITE_BASE_PATH || "/",
   plugins: [
     vue(),
+    spaFallback(),
     glsl({
       include: ["**/*.glsl", "**/*.vert", "**/*.frag"],
       defaultExtension: "glsl",

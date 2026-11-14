@@ -1,21 +1,37 @@
-# Portfolio (2025)
+# Quí Trọng — Graphic Designer Portfolio
 
-Personal portfolio site: project case studies, lightweight 3D and shader demos, bilingual copy (English and German).
+Portfolio of Nguyễn Quí Trọng (graphic designer, Vietnam): brand identity, game art, video animation and storyboard projects, in English and Vietnamese.
 
-Built with **Vue 3**, **TypeScript**, and **Vite**. Motion via **GSAP** and **Lenis**, 3D via **three.js**, audio via **Howler**. GLSL is compiled through **vite-plugin-glsl**.
+Live: https://qiutee1210.github.io/portfolio-2025/
+
+Built on the open portfolio template by David Heckhoff (see Credits below) with **Vue 3**, **TypeScript**, **Vite**, **three.js**, **GSAP**, **Lenis** and **Howler**.
+
+## Updating content
+
+| What | Where |
+| ---- | ----- |
+| Name, job title, about text, all UI copy | `src/i18n/messages/namespaces/common/{en,vi}.json`, `src/features/home/components/{Hero,BoxDetails,BoxDescription}.vue` |
+| Skills list | `src/features/home/components/BoxServices.vue` |
+| Social links (mail, Facebook, Behance) | `src/content/social.ts` |
+| Project cards | `src/content/projects/previews/{en,vi}.ts` + thumbnails in `src/assets/thumbnails/` |
+| Project pages | `src/content/projects/{en,vi}/<slug>.ts`; images and captions in `src/content/projects/galleries/<slug>.ts` |
+| Right monitor in the 3D room | Edit `design-sources/desktops/right-screen.png` (or the Blender export `design-sources/port.glb`), then run `python scripts/build_desktops_atlas.py` (needs Pillow) |
+
+Deployment runs automatically on every push to `main` through `.github/workflows/deploy.yml` (GitHub Pages, source: GitHub Actions).
 
 ## Scripts
 
 | Command        | Description                          |
 | -------------- | ------------------------------------ |
 | `npm run dev`   | Dev server on port **3000** (`strictPort`) |
+| `VITE_BASE_PATH=/portfolio-2025/ npm run build` | Build for a sub-path (what CI does) |
 | `npm run build` | `vue-tsc` then production bundle to `dist/` |
 | `npm run preview` | Serve the production build locally |
 | `npm run typecheck` | Typecheck only (`vue-tsc -b`) |
 
 ## Content
 
-- **Projects**: `src/content/projects/{en,de}/<slug>.ts` — copy, tags, media, links. Slugs must align with `projectIds` in `src/content/projects/index.ts`.
+- **Projects**: `src/content/projects/{en,vi}/<slug>.ts` — copy, tags, media, links. Slugs must align with `projectIds` in `src/content/projects/index.ts`.
 - **Previews / listing**: `src/content/projects/previews/`.
 - **Tags**: variants and labels live in `src/components/tagVariants.ts` (used by `Tag.vue` and content types).
 

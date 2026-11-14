@@ -9,6 +9,7 @@ import { sceneWeights } from "../../../animations/scenes";
 import { animations as avatarAnimations } from "../avatar/animations";
 import { leftDesktop as avatarLeftDesktop } from "../avatar/left-desktop";
 import { playSound } from "../../../features/sounds/utils/sounds";
+import { renderer } from "../../core/renderer";
 
 import type { Object3D, Material, BufferGeometry } from "three";
 
@@ -39,7 +40,8 @@ const setupMesh = () => {
   desktop2.geometry.translate(desktop2.position);
 
   // Add scrollIntensity attribute to geometries
-  const scrollIntensity1 = new Float32Array(desktop1.geometry.attributes.position.count).fill(1);
+  // Both screens show static design-tool UIs now, so neither one scrolls.
+  const scrollIntensity1 = new Float32Array(desktop1.geometry.attributes.position.count).fill(0);
   const scrollIntensity2 = new Float32Array(desktop2.geometry.attributes.position.count).fill(0);
   desktop1.geometry.setAttribute("scrollIntensity", new BufferAttribute(scrollIntensity1, 1));
   desktop2.geometry.setAttribute("scrollIntensity", new BufferAttribute(scrollIntensity2, 1));
@@ -57,6 +59,7 @@ const setupMesh = () => {
   texture.flipY = false;
   texture.wrapS = RepeatWrapping;
   texture.wrapT = RepeatWrapping;
+  texture.anisotropy = Math.min(8, renderer.getInstance().capabilities.getMaxAnisotropy());
 
   material = new ShaderMaterial({
     fragmentShader,

@@ -1,40 +1,33 @@
-import thumbnailCubeWar from "../../../assets/thumbnails/cubewar.webp";
-import thumbnailQuibbo from "../../../assets/thumbnails/quibbo.webp";
-import thumbnailParticles from "../../../assets/thumbnails/particles.webp";
-import thumbnailPokedex from "../../../assets/thumbnails/pokedex.webp";
-import thumbnailSharkie from "../../../assets/thumbnails/sharkie.webp";
+import thumbnailParaPizza from "../../../assets/thumbnails/parapizza.webp";
+import thumbnailDarkCalvary from "../../../assets/thumbnails/dark-calvary.webp";
+import thumbnailMatBao from "../../../assets/thumbnails/mat-bao.webp";
+import thumbnailCanhCua from "../../../assets/thumbnails/canh-cua.webp";
 
 import type { ProjectPreview } from "../../types";
 
 export default [
   {
-    title: "CubeWar",
-    slug: "cubewar",
-    thumbnail: thumbnailCubeWar,
-    description: "Multiplayer strategy game",
+    title: "ParaPizza",
+    slug: "parapizza",
+    thumbnail: thumbnailParaPizza,
+    description: "Brand identity",
   },
   {
-    title: "Quibbo",
-    slug: "quibbo",
-    thumbnail: thumbnailQuibbo,
-    description: "Multiplayer gaming platform",
+    title: "Dark Calvary",
+    slug: "dark-calvary",
+    thumbnail: thumbnailDarkCalvary,
+    description: "2D metroidvania game",
   },
   {
-    title: "Sharkie",
-    slug: "sharkie",
-    thumbnail: thumbnailSharkie,
-    description: "2D adventure game",
+    title: "Mắt Bão",
+    slug: "mat-bao",
+    thumbnail: thumbnailMatBao,
+    description: "Video animation",
   },
   {
-    title: "WebGL Particles",
-    slug: "particles",
-    thumbnail: thumbnailParticles,
-    description: "Dynamic 3D particles",
-  },
-  {
-    title: "Pokédex",
-    slug: "pokedex",
-    thumbnail: thumbnailPokedex,
-    description: "Open-source learning project",
+    title: "Cánh Cửa",
+    slug: "canh-cua",
+    thumbnail: thumbnailCanhCua,
+    description: "Animated short storyboard",
   },
 ] as const satisfies ProjectPreview[];

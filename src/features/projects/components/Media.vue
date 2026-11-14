@@ -13,10 +13,22 @@ export interface Props {
   src: string;
   alt?: string;
   caption?: string;
+  /** Intrinsic size [width, height]. When set, the media keeps its own aspect ratio instead of 16:9. */
+  size?: [number, number];
   index: number;
 }
 
 const props = defineProps<Props>();
+
+// Tall media get narrower so they still fit on screen.
+const wrapperStyle = computed(() => {
+  if (!props.size) return undefined;
+  const [width, height] = props.size;
+  return {
+    aspectRatio: `${width} / ${height}`,
+    maxWidth: `min(900px, calc(85svh * ${width} / ${height}))`,
+  };
+});
 
 const wrapperClasses = computed(() => {
   return {
@@ -53,7 +65,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div :class="wrapperClasses" ref="wrapperRef">
+  <div :class="wrapperClasses" :style="wrapperStyle" ref="wrapperRef">
     <div class="project-media-content" ref="mediaContentRef">
       <img
         v-if="props.type === 'image'"
