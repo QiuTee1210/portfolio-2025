@@ -109,6 +109,12 @@ onMounted(loadPreviews);
       left: -8px;
       transform: translate(0, -20%) rotate(-4deg);
 
+      // "Tiêu biểu" / "Selected" uses FZ Poppins instead of the banner's pixel font
+      :deep(.banner-copy) {
+        font-family: "FZ Poppins";
+        font-weight: 700;
+      }
+
       @include mixins.mq("lg") {
         left: -16px;
         transform: translate(0, -20%) rotate(-6deg);
