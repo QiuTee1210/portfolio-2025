@@ -60,6 +60,8 @@ const classes = computed(() => {
   }
 
   &-title {
+    font-family: "FZ Poppins";
+    font-weight: 700;
     font-size: var(--font-size-title-sm);
     line-height: var(--line-height-md);
   }

@@ -227,6 +227,7 @@ onUnmounted(() => {
   }
 
   &-title {
+    font-family: "FZ Poppins";
     font-size: var(--font-size-title-xs);
     font-weight: 700;
     color: var(--color-text-400);

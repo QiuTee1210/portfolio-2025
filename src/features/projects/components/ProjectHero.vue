@@ -116,6 +116,8 @@ watch(projectId, () => {
   }
 
   &-title {
+    font-family: "FZ Poppins";
+    font-weight: 700;
     font-size: var(--font-size-title-lg);
     color: var(--color-text-400);
     line-height: var(--line-height-title);

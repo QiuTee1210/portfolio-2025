@@ -69,6 +69,7 @@ const { project } = defineProps<{
   }
 
   &-title {
+    font-family: "FZ Poppins";
     font-size: var(--font-size-title-xxs);
     line-height: var(--line-height-title);
     font-weight: 700;
