@@ -164,6 +164,7 @@ onMounted(() => {
   &-link {
     position: relative;
     z-index: 2;
+    font-family: "FZ Poppins";
     letter-spacing: 0.02em;
     font-weight: 700;
     border: none;

@@ -17,6 +17,7 @@ const props = defineProps<{
 
 <style scoped lang="scss">
 .header-link {
+  font-family: "FZ Poppins";
   letter-spacing: 0.02em;
   font-weight: 700;
   border: none;

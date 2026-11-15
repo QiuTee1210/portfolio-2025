@@ -221,11 +221,13 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
   }
 
   &-title {
-    font-size: var(--font-size-title-xxs);
-    font-weight: 700;
+    font-family: "DeArPix";
+    font-weight: 400;
+    // DeArPix is a pixel font on a 1/16 em grid: multiples of 8px keep it crisp
+    font-size: 24px;
 
     @include mixins.mq("md") {
-      font-size: var(--font-size-title-sm);
+      font-size: 32px;
     }
   }
 

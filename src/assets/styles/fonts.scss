@@ -66,3 +66,31 @@ $vietnamese-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01
     unicode-range: $vietnamese-range;
   }
 }
+
+// Display and accent fonts chosen by Quí Trọng (all SIL Open Font License 1.1,
+// see public/fonts/FONTS-LICENSE.md). Subset to Latin + Vietnamese.
+@font-face {
+  font-family: "Bangers";
+  src: url(/fonts/bangers-400.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DeArPix";
+  src: url(/fonts/dearpix-400.woff2) format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@each $weight in 500, 700 {
+  @font-face {
+    font-family: "FZ Poppins";
+    src: url(/fonts/fz-poppins-#{$weight}.woff2) format("woff2");
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}

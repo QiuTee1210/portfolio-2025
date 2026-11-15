@@ -244,6 +244,8 @@ const services = [
       }
 
       &-name {
+        font-family: "FZ Poppins";
+        font-weight: 500;
         font-size: var(--font-size-md);
 
         @include mixins.landscape {
@@ -258,15 +260,13 @@ const services = [
   }
 
   &-title {
-    font-size: var(--font-size-title-xs);
-    font-weight: 700;
-
-    @include mixins.landscape {
-      font-size: var(--font-size-title-xxs);
-    }
+    font-family: "DeArPix";
+    font-weight: 400;
+    // DeArPix is a pixel font on a 1/16 em grid: multiples of 8px keep it crisp
+    font-size: 24px;
 
     @include mixins.landscape-large {
-      font-size: var(--font-size-title-xs);
+      font-size: 32px;
     }
   }
 }
