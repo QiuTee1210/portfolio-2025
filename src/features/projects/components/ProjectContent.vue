@@ -69,6 +69,9 @@ onMounted(loadPreviews);
 <style scoped lang="scss">
 .project-content {
   color: var(--color-text-400);
+  // project pages use FZ Poppins (full Vietnamese coverage); titles set their own 700 weight
+  font-family: "FZ Poppins";
+  font-weight: 500;
 
   &-grid {
     row-gap: var(--space-sm);

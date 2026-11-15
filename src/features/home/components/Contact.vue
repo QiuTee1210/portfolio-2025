@@ -66,7 +66,9 @@ onUnmounted(() => {
     font-family: "Bangers";
     font-weight: 400;
     letter-spacing: 0.03em;
-    font-size: var(--font-size-title-md);
+    // always one line: shrink with the viewport on phones instead of wrapping
+    white-space: nowrap;
+    font-size: min(var(--font-size-title-md), calc(var(--svw) * 11));
 
     @include mixins.mq("sm") {
       font-size: var(--font-size-title-lg);
