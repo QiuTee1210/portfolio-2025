@@ -140,9 +140,10 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
     padding-right: var(--line-length);
   }
 
+  // a bit wider than the template: FZ Poppins runs wider than the pixel font
   @include mixins.landscape-large {
-    width: 410px;
-    max-width: calc(var(--svw) * 32);
+    width: 470px;
+    max-width: calc(var(--svw) * 36);
   }
 
   &-line {
@@ -183,6 +184,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
       }
 
       &-copy {
+        font-family: "FZ Poppins";
+        font-weight: 500;
         font-size: var(--font-size-md);
       }
     }
@@ -236,6 +239,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
   &-copy {
     will-change: opacity;
+    font-family: "FZ Poppins";
+    font-weight: 500;
     font-size: var(--font-size-md);
     padding: var(--space-sm) var(--space-md);
 

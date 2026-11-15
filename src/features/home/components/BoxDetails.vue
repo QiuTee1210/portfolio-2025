@@ -233,6 +233,8 @@ const handleTimelineCreated = (timeline: gsap.core.Timeline, delay: number) => {
 
   &-items {
     display: flex;
+    font-family: "FZ Poppins";
+    font-weight: 500;
     font-size: var(--font-size-sm);
     flex-direction: column;
 
