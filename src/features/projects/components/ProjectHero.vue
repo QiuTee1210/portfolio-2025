@@ -128,6 +128,11 @@ watch(projectId, () => {
       font-size: var(--font-size-title-xl);
     }
 
+    // The title column is narrowest just above the lg breakpoint; shrink so long words like "Editorial" stay whole.
+    @include mixins.mq("lg") {
+      font-size: min(var(--font-size-title-xl), 6.6vw);
+    }
+
     @keyframes project-hero-title-visible {
       from {
         transform: translateY(100%);
